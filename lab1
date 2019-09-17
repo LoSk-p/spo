@@ -6,7 +6,7 @@ cd ~/vspom
 
 # Название, размер, расширение и дата изменения
 echo Название,Размер,Дата изменения > lab1.1.txt
-ls -l $dir | awk '{print $9 $10 $11,$5,$6" "$7" "$8}' OFS=',' >> lab1.1.txt 
+ls -l $dir | awk '{print $9 $10 $11 $12 $13 $14 $15,$5,$6" "$7" "$8}' OFS=',' >> lab1.1.txt 
 echo Расширение > lab1.4.txt
 ls -l $dir | awk -F "." '{if (NF==1) {print "-"} else {print $NF}}' >> lab1.4.txt
 
