@@ -1,8 +1,8 @@
 #!/bin/bash
 dir=~/6  #Исследуемая директория
 rm $dir/lab1.xls
-mkdir ~/SPOlabs/vspom
-cd ~/SPOlabs/vspom
+mkdir ~/vspom
+cd ~/vspom
 
 # Название, размер, расширение и дата изменения
 echo Название,Размер,Дата изменения > lab1.1.txt
@@ -28,4 +28,4 @@ done
 #В табличку
 paste lab1.1.txt lab1.2.txt lab1.3.txt lab1.4.txt >> $dir/lab1.xls
 cd $dir
-rm -r ~/SPOlabs/vspom
+rm -r ~/vspom
