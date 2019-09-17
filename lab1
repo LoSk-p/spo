@@ -10,6 +10,13 @@ ls -l $dir | awk '{print $9 $10 $11,$5,$6" "$7" "$8}' OFS=',' >> lab1.1.txt
 echo Расширение > lab1.4.txt
 ls -l $dir | awk -F "." '{if (NF==1) {print "-"} else {print $NF}}' >> lab1.4.txt
 
+#Тип файла
+echo Тип файла > lab1.2.txt
+echo \ >> lab1.2.txt
+for file in $dir/*; do 
+file --mime-type -b "$file" >> lab1.2.txt  
+done
+
 #Длительность
 echo Длительность > lab1.3.txt
 echo \ >> lab1.3.txt
@@ -19,6 +26,6 @@ echo -$lek >> lab1.3.txt
 done
 
 #В табличку
-paste lab1.1.txt lab1.3.txt lab1.4.txt >> $dir/lab1.xls
+paste lab1.1.txt lab1.2.txt lab1.3.txt lab1.4.txt >> $dir/lab1.xls
 cd $dir
 rm -r ~/vspom
